@@ -1,56 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-*{
-    padding: 0;
-    margin: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
 }
-.container{
-    /* display: flex; */
-    background-image: url(bg-hero-desktop.svg);
-    background-color: hsl(0, 100%, 74%) ;
+
+body {
+  background-color: hsl(0, 100%, 74%);
+  background-image: url(images/bg-intro-desktop.png);
 }
-.one{
-    display: flex;
-    justify-content: space-between;
-    margin: auto; 
-    margin: 200px 300px;
+
+main {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 11px;
+  padding-right: 11px;
+  display: flex;
+  gap: 4em;
+  margin: auto;
+  height: 80%;
+  max-width: 1440px;
+
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); */
 }
-h2{
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.0rem;
+
+main > * {
+  flex: 1;
 }
-p{
-    color: white;
-    padding-top: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.8rem;
+
+.left {
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
 }
-.three{
-  background-color: white; 
-  padding-left: 20px;
+
+.left > * {
+  padding: 20px 40px;
+}
+
+.left h1 {
+  font-size: 50px;
+}
+
+.right {
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr;
+  font-size: 16px;
+}
+
+form {
+  display: grid;
+  background-color: white;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0px 7px rgba(66, 66, 66, 0.342);
+}
+
+form p {
+  color: darkgray;
+}
+
+.invalid {
+  font-size: 0px;
+}
+
+input {
+  padding: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  border: 1px solid lightgray;
   border-radius: 5px;
-
-  
-}
-h6{
-    margin-bottom: 20px;
-    padding: 10px 10px 10px 20px;
-    background-color: hsl(246, 25%, 77%);
 }
 
-.reg{
-   margin-top: 20px;
-  
+input[class="input-field"]:invalid {
+  border: 2px solid hsl(0, 100%, 74%);
+  color: hsl(0, 100%, 74%);
+  content: attr(error-msg);
+  background: url(/images/icon-error.svg) no-repeat;
+  background-position: 95%;
 }
 
-.claim{
-    margin-top: 20px;
+input[class="input-field"]:invalid + .invalid {
+  font-size: 12px;
+  font-style: italic;
+  display: block;
+  color: hsl(0, 100%, 74%);
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.trial-btn {
+  margin-bottom: 30px;
+  background-color: hsl(248, 32%, 49%);
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0px 8px rgba(66, 66, 66, 0.281);
+}
+
+.trial-btn a {
+  padding: 20px;
+  color: white;
+}
+
+.claim-btn {
+  color: white;
+  background-color: hsl(154, 59%, 51%);
+  border: none;
+  box-shadow: 0px 4px hsl(154, 64%, 45%);
+  margin-bottom: 20px;
+}
+
+.claim-btn:hover {
+  background-color: hsl(154, 87%, 70%);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.try-free,
+.terms {
+  font-weight: 700;
+}
+
+.terms {
+  color: hsl(0, 100%, 74%);
+}
+
+@media screen and (max-width: 70em) {
+  main {
+    margin-top: 1px;
+    display: grid;
+    min-width: 375px;
+    max-width: 800px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  body {
+    background-image: url(/images/bg-intro-mobile.png);
+  }
+
+  .left {
     text-align: center;
-}
-.free1{
-    background-color: hsl(154, 59%, 51%);
-    border: 0;
-    border-radius: 5px;
-    padding: 5px;
+  }
+
+  .left h1 {
+    font-size: 30px;
+  }
 }
